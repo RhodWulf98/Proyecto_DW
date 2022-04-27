@@ -14,19 +14,23 @@ body{
 
 /*  Encabezado  */
 header{
-    background-color:#112D4E;
-    height: 100px;;
+    /* ¿Por qué no actua como fondo del encabezado */
+    /* background-color:white; */
+    height: 100px;
     display:flex;
 }
 
 header .encabezado{
     display:flex;
+    /* Tamaño horizontal de la cabecera */
+    width: 100%;
     /* guía para saber donde estan los botones */
-    /* background-color: white; */
+    /* Fondo del encabezado */
+    background-color: #112D4E;
 }
 
 header .encabezado_logo{
-    padding-left: 100px;
+    padding-left: 50px;
 }
 
 header .encabezado_logo img{
@@ -35,11 +39,8 @@ header .encabezado_logo img{
 
 nav{
     display: flex;
-    height: 100%;
     /* Centra los botones */
-    padding-left: 30%;
     align-items: center;
-    padding-right: 100px;
 }
 
 nav ul{
@@ -52,7 +53,10 @@ nav ul li{
     display: flex;
     /* background-color: #3F72AF; */
     flex: auto;
-    padding: 100px;
+    /* Tamaño del area de los botones */
+    /* (cambiar el color de fondo) */
+    padding-inline-end: 40%;
+    padding-block: 10px;
 }
 
 nav ul li a{

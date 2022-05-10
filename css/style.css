@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
 *{
     box-sizing: border-box;
 }
@@ -10,7 +12,7 @@ body{
 }
 
 /* #region Header */
-header{
+header.cabecera{
     display: flex;
     flex-direction: row;
     max-width: 100%;
@@ -21,23 +23,30 @@ header{
 }
 
 header div{
-    display: flex;
     height: 100%;
 }
 
-header nav ul{
+header div img{
+    height: 100%;
+}
+
+header nav ul.enlaces{
     display: flex;
-    flex-direction: row;
+    flex-flow: wrap;
 }
 
 header nav ul li{
     margin: 10px;
-    display: flex;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
 }
 
 header nav ul li a{
     color: white;
-    text-decoration: none;
+    font-family: 'Roboto';
+    font-size: large;
+    font-weight: 500;
 }
 /* #endregion */
 
@@ -63,7 +72,7 @@ ul{
 }
 
 .mostrador aside{
-    width: 30%;
+    width: 300px;
     margin-left: 10px;
 }
 

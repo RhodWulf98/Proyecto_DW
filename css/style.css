@@ -8,52 +8,57 @@ body{
     background-color: white;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0 auto;
 }
 
+
 /* #region Header */
-header.cabecera{
+#cabecera{
     display: flex;
     flex-direction: row;
     max-width: 100%;
     height: 100px;
-    align-items: center;
     justify-content: center;
     background-color: #112D4E;
 }
 
-header div{
+#logotipo{
     height: 100%;
 }
 
-header div img{
-    height: 100%;
+#enlaces-principales{
+    display: flex;
+    align-items: center;
 }
 
-header nav ul.enlaces{
+#enlaces{
     display: flex;
     flex-flow: wrap;
+    padding: 0;
+    margin: 0;
 }
 
-header nav ul li{
-    margin: 10px;
-    width: 100px;
+#enlaces li{
+    width: 150px;
     text-align: center;
-    line-height: 40px;
 }
 
-header nav ul li a{
+#enlaces li a{
     color: white;
     font-family: 'Roboto';
     font-size: large;
     font-weight: 500;
 }
+
+.sombreado:hover{
+    background-color:coral;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
 /* #endregion */
 
 /* #region Generales */
-a{
-    text-decoration: none;
-}
+
 
 ul{
     list-style: none;
@@ -61,6 +66,13 @@ ul{
 /* #endregion */
 
 /* #region mostrador */
+
+#carouselExampleIndicators{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .mostrador{
     display: flex;
     flex-direction: row;
@@ -88,9 +100,5 @@ ul{
 
 .mostrador aside nav ul li a{
     color: black;
-}
-
-main{
-    margin-left: 10px;
 }
 /* #endregion */

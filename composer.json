@@ -1,0 +1,20 @@
+{
+    "name": "rhod/tienda-componentes",
+    "description": "Tienda de componentes",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RodolfoDiaz",
+            "email": "314356408@pcpuma.acatlan.unam.mx"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Rhod\\":"src/"
+        }
+    }
+}

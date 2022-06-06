@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap");
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #ffff;
     flex-direction: column;
     min-height: 100vh;
 }
 
 /* #region Header */
-#cabecera{
+#cabecera {
     display: flex;
     flex-direction: row;
     max-width: 100%;
@@ -20,96 +20,95 @@ body{
     background-color: #14269be2;
 }
 
-#logotipo{
+#logotipo {
     height: 100%;
 }
 
-.enlaces-principales{
+.enlaces-principales {
     display: flex;
     align-items: center;
 }
 
-.enlaces-principales ul{
+.enlaces-principales ul {
     display: flex;
     flex-flow: wrap;
     padding: 0;
     margin: 0;
 }
 
-.enlaces-principales ul li{
+.enlaces-principales ul li {
     width: 150px;
     text-align: center;
 }
 
-.enlaces-principales ul li a{
-    font-family: 'Roboto';
+.enlaces-principales ul li a {
+    font-family: "Roboto";
     font-size: large;
     font-weight: 500;
-    color: #F9F7F7;
+    color: #f9f7f7;
 }
 
-.enlaces-principales ul li a img{
+.enlaces-principales ul li a img {
     height: 30px;
 }
 
-#sesión{
+#sesión {
     width: 100px;
 }
 
-.sombreado:hover{
-    background-color:#5C7AEA;
+.sombreado:hover {
+    background-color: #5c7aea;
     padding: 10px;
     border-radius: 10px;
     text-decoration: none;
 }
 
-.sesion{
+.sesion {
     width: 100%;
 }
 /* #endregion */
 
 /* #region Generales */
 
-
-ul{
+ul {
     list-style: none;
 }
 /* #endregion */
 
 /* #region mostrador */
 
-#carouselExampleIndicators{
+#carouselExampleIndicators {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
 
-.mostrador{
+.mostrador {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
 }
 
-.mostrador h3{
+.mostrador h3 {
     text-align: center;
 }
 
-.mostrador aside{
-    background-color: #3F72AF;
-    color: #F9F7F7;
+.mostrador aside {
+    background-color: #3f72af;
+    color: #f9f7f7;
     border-radius: 10px;
     width: 300px;
     margin-left: 10px;
 }
 
-.mostrador aside nav ul li{
+.mostrador aside nav ul li {
     padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.mostrador aside nav ul li a{
+.mostrador aside nav ul li a {
     color: black;
-    color: #F9F7F7;
+    color: #f9f7f7;
 }
 /* #endregion */

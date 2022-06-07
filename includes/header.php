@@ -18,14 +18,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
     <script src="/js/script.js"></script>
     <header id="cabecera">
         <a href="index.html">
-            <img id="logotipo" src="img/MundoDigitalLogo.svg" alt="Logotipo" />
+            <img id="logotipo" src="../img/MundoDigitalLogo.svg" alt="Logotipo" />
         </a>
         <nav class="enlaces-principales">
             <ul>
@@ -43,10 +43,10 @@
         <nav class="enlaces-principales">
             <ul>
                 <li id="sesión">
-                    <a href=""><img src="img/sesión/Iniciar sesión.png" alt="" /></a>
+                    <a href=""><img src="../img/sesión/Iniciar sesión.png" alt="" /></a>
                 </li>
                 <li id="sesión">
-                    <a href=""><img src="img/sesión/Registrarse.png" alt="" /></a>
+                    <a href=""><img src="../img/sesión/Registrarse.png" alt="" /></a>
                 </li>
             </ul>
         </nav>

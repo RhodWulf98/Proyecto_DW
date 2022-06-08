@@ -40,13 +40,6 @@
 
 <body>
 
-	<style>
-		a {
-			text-decoration: none;
-			color: white;
-			font-size: large;
-		}
-	</style>
 	<header id="cabecera">
 		<a href="index.php">
 			<img id="logotipo" src="img/MundoDigitalLogo.svg" alt="Logotipo" />
@@ -66,16 +59,16 @@
 			</ul>
 		</nav>
 		<nav class="enlaces-principales">
-			<?php if (strlen($_SESSION['login'])) {   ?>
-				<li><a href="#"><i class="icon fa fa-user"></i>Bienvenido -<?php echo htmlentities($_SESSION['username']); ?></a></li>
-			<?php } ?>
-
-			<li><a href="my-account.php"><i class="icon fa fa-user"></i>&nbsp&nbsp Mi cuenta</a></li>
-			<?php if (strlen($_SESSION['login']) == 0) {   ?>
-				<li><a href="login.php"><i class="icon fa fa-sign-in"></i>&nbsp&nbsp Iniciar sesión</a></li>
-			<?php } else { ?>
-
-				<li><a href="logout.php"><i class="icon fa fa-sign-out"></i> &nbsp&nbsp Cerrar sesión</a></li>
-			<?php } ?>
+			<ul>
+				<?php if (strlen($_SESSION['login'])) {   ?>
+					<li><a href="#"><i class="icon fa fa-user"></i>Bienvenido -<?php echo htmlentities($_SESSION['username']); ?></a></li>
+				<?php } ?>
+					<li id="sesión"><a href="my-account.php"><i class="icon fa fa-user"></i> Mi cuenta</a></li>
+				<?php if (strlen($_SESSION['login']) == 0) {   ?>
+					<li><a href="login.php"><i class="icon fa fa-sign-in"></i> Iniciar sesión</a></li>
+				<?php } else { ?>
+					<li id="sesión"><a href="logout.php"><i class="icon fa fa-sign-out"></i>  Cerrar sesión</a></li>
+				<?php } ?>
+			</ul>
 		</nav>
 	</header>

@@ -15,9 +15,13 @@ body {
     display: flex;
     flex-direction: row;
     max-width: 100%;
-    height: 100px;
+    height: 150px;
     justify-content: space-around;
     background-color: #14269be2;
+}
+
+#cabecera a{
+    width: 100px;
 }
 
 #logotipo {
@@ -34,7 +38,7 @@ body {
     flex-flow: wrap;
     padding: 0;
     margin: 0;
-    background-color: aliceblue;
+    list-style: none;
 }
 
 .enlaces-principales ul li {
@@ -46,12 +50,8 @@ body {
     font-family: "Roboto";
     font-size: large;
     font-weight: 500;
-    color: #f9f7f7;
+    color: white;
     text-decoration: none;
-}
-
-.enlaces-principales ul li a img {
-    height: 30px;
 }
 
 #sesión {

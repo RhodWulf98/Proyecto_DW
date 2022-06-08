@@ -65,99 +65,12 @@ if (isset($_POST['submit'])) {
 		<div class='row single-product outer-bottom-sm '>
 			<div class='col-md-3 sidebar'>
 				<div class="sidebar-module-container">
-
-
-					<!-- ==============================================CATEGORY============================================== -->
-					<div class="sidebar-widget outer-bottom-xs wow fadeInUp">
-						<h3 class="section-title">Categoria</h3>
-						<div class="sidebar-widget-body m-t-10">
-							<div class="accordion">
-
-								<?php $sql = mysqli_query($con, "select id,categoryName  from category");
-								while ($row = mysqli_fetch_array($sql)) {
-								?>
-									<div class="accordion-group">
-										<div class="accordion-heading">
-											<a href="category.php?cid=<?php echo $row['id']; ?>" class="accordion-toggle collapsed">
-												<?php echo $row['categoryName']; ?>
-											</a>
-										</div>
-
-									</div>
-								<?php } ?>
-							</div>
-						</div>
-					</div>
-					<!-- ============================================== CATEGORY : END ============================================== -->
-					<!-- ============================================== HOT DEALS ============================================== -->
-					<div class="sidebar-widget hot-deals wow fadeInUp">
-						<h3 class="section-title">LAS MEJORES OFERTAS</h3>
-						<div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-xs">
-
-							<?php
-							$ret = mysqli_query($con, "select * from products order by rand() limit 4 ");
-							while ($rws = mysqli_fetch_array($ret)) {
-
-							?>
-
-
-								<div class="item">
-									<div class="products">
-										<div class="hot-deal-wrapper">
-											<div class="image">
-												<img src="admin/productimages/<?php echo htmlentities($rws['productName']); ?>/<?php echo htmlentities($rws['productImage1']); ?>" width="200" height="334" alt="">
-											</div>
-
-										</div><!-- /.hot-deal-wrapper -->
-
-										<div class="product-info text-left m-t-20">
-											<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($rws['id']); ?>"><?php echo htmlentities($rws['productName']); ?></a></h3>
-											<div class="rating rateit-small"></div>
-
-											<div class="product-price">
-												<span class="price">
-													$. <?php echo htmlentities($rws['productPrice']); ?>.00
-												</span>
-
-												<span class="price-before-discount">$.<?php echo htmlentities($row['productPriceBeforeDiscount']); ?></span>
-
-											</div><!-- /.product-price -->
-
-										</div><!-- /.product-info -->
-
-										<div class="cart clearfix animate-effect">
-											<div class="action">
-
-												<div class="add-cart-button btn-group">
-													<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-														<i class="fa fa-shopping-cart"></i>
-													</button>
-													<a href="product-details.php?page=product&action=add&id=<?php echo $rws['id']; ?>" class="lnk btn btn-primary" style="height:34px;padding-top: 5px;">Agregar a carrito</a>
-
-
-
-												</div>
-
-											</div><!-- /.action -->
-										</div><!-- /.cart -->
-									</div>
-								</div>
-							<?php } ?>
-
-
-						</div><!-- /.sidebar-widget -->
-					</div>
-
-					<!-- ============================================== COLOR: END ============================================== -->
 				</div>
 			</div><!-- /.sidebar -->
 			<?php
 			$ret = mysqli_query($con, "select * from products where id='$pid'");
 			while ($row = mysqli_fetch_array($ret)) {
-
 			?>
-
-
 				<div class='col-md-9'>
 					<div class="row  wow fadeInUp">
 						<div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
@@ -215,21 +128,10 @@ if (isset($_POST['submit'])) {
 												<img class="img-responsive" width="85" alt="" src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage3']); ?>" height="200" />
 											</a>
 										</div>
-
-
-
-
 									</div><!-- /#owl-single-product-thumbnails -->
-
-
-
 								</div>
-
 							</div>
 						</div>
-
-
-
 
 						<div class='col-sm-6 col-md-7 product-info-block'>
 							<div class="product-info">
@@ -303,27 +205,8 @@ if (isset($_POST['submit'])) {
 											</div>
 										</div>
 
-
-
-
-										<div class="col-sm-6">
-											<div class="favorite-button m-t-10">
-												<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Lista de deseos" href="product-details.php?pid=<?php echo htmlentities($row['id']) ?>&&action=wishlist">
-													<i class="fa fa-heart"></i>
-												</a>
-
-												</a>
-											</div>
-										</div>
-
 									</div><!-- /.row -->
 								</div><!-- /.price-container -->
-
-
-
-
-
-
 								<div class="quantity-container info-container">
 									<div class="row">
 
@@ -342,31 +225,11 @@ if (isset($_POST['submit'])) {
 												</div>
 											</div>
 										</div>
-
 										<div class="col-sm-7">
 											<a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> Agregar a compras</a>
 										</div>
-
-
 									</div><!-- /.row -->
 								</div><!-- /.quantity-container -->
-
-								<div class="product-social-link m-t-20 text-right">
-									<span class="social-label">Compartir:</span>
-									<div class="social-icons">
-										<ul class="list-inline">
-											<li><a class="fa fa-facebook" href="https://facebook.com/platea21"></a></li>
-											<li><a class="fa fa-twitter" href="https://facebook.com/platea21"></a></li>
-											<li><a class="fa fa-linkedin" href="https://facebook.com/platea21"></a></li>
-											<li><a class="fa fa-rss" href="https://facebook.com/platea21"></a></li>
-											<li><a class="fa fa-pinterest" href="https://facebook.com/platea21"></a></li>
-										</ul><!-- /.social-icons -->
-									</div>
-								</div>
-
-
-
-
 							</div><!-- /.product-info -->
 						</div><!-- /.col-sm-7 -->
 					</div><!-- /.row -->
@@ -377,123 +240,15 @@ if (isset($_POST['submit'])) {
 							<div class="col-sm-3">
 								<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
 									<li class="active"><a data-toggle="tab" href="#description">DESCRIPCIÓN</a></li>
-									<li><a data-toggle="tab" href="#review">CALIFICACIONES</a></li>
 								</ul><!-- /.nav-tabs #product-tabs -->
 							</div>
 							<div class="col-sm-9">
-
 								<div class="tab-content">
-
 									<div id="description" class="tab-pane in active">
 										<div class="product-tab">
 											<p class="text"><?php echo $row['productDescription']; ?></p>
 										</div>
 									</div><!-- /.tab-pane -->
-
-									<div id="review" class="tab-pane">
-										<div class="product-tab">
-
-											<div class="product-reviews">
-												<h4 class="title">Calificaciones de Clientes</h4>
-												<?php $qry = mysqli_query($con, "select * from productreviews where productId='$pid'");
-												while ($rvw = mysqli_fetch_array($qry)) {
-												?>
-
-													<div class="reviews" style="border: solid 1px #000; padding-left: 2% ">
-														<div class="review">
-															<div class="review-title"><span class="summary"><?php echo htmlentities($rvw['summary']); ?></span><span class="date"><i class="fa fa-calendar"></i><span><?php echo htmlentities($rvw['reviewDate']); ?></span></span></div>
-
-															<div class="text">"<?php echo htmlentities($rvw['review']); ?>"</div>
-															<div class="text"><b>Calidad :</b> <?php echo htmlentities($rvw['quality']); ?> Estrella</div>
-															<div class="text"><b>Precio :</b> <?php echo htmlentities($rvw['price']); ?> Estrella</div>
-															<div class="text"><b>Valor :</b> <?php echo htmlentities($rvw['value']); ?> Estrella</div>
-															<div class="author m-t-15"><i class="fa fa-pencil-square-o"></i> <span class="name"><?php echo htmlentities($rvw['name']); ?></span></div>
-														</div>
-
-													</div>
-												<?php } ?>
-												<!-- /.reviews -->
-											</div><!-- /.product-reviews -->
-											<form role="form" class="cnt-form" name="review" method="post">
-
-
-												<div class="product-add-review">
-													<h4 class="title">Dejanos tu calificación</h4>
-													<div class="review-table">
-														<div class="table-responsive">
-															<table class="table table-bordered">
-																<thead>
-																	<tr>
-																		<th class="cell-label">&nbsp;</th>
-																		<th>1 estrella</th>
-																		<th>2 estrellas</th>
-																		<th>3 estrellas</th>
-																		<th>4 estrellas</th>
-																		<th>5 estrellas</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td class="cell-label">Calidad</td>
-																		<td><input type="radio" name="quality" class="radio" value="1"></td>
-																		<td><input type="radio" name="quality" class="radio" value="2"></td>
-																		<td><input type="radio" name="quality" class="radio" value="3"></td>
-																		<td><input type="radio" name="quality" class="radio" value="4"></td>
-																		<td><input type="radio" name="quality" class="radio" value="5"></td>
-																	</tr>
-																	<tr>
-																		<td class="cell-label">Precio</td>
-																		<td><input type="radio" name="price" class="radio" value="1"></td>
-																		<td><input type="radio" name="price" class="radio" value="2"></td>
-																		<td><input type="radio" name="price" class="radio" value="3"></td>
-																		<td><input type="radio" name="price" class="radio" value="4"></td>
-																		<td><input type="radio" name="price" class="radio" value="5"></td>
-																	</tr>
-																	<tr>
-																		<td class="cell-label">Valor</td>
-																		<td><input type="radio" name="value" class="radio" value="1"></td>
-																		<td><input type="radio" name="value" class="radio" value="2"></td>
-																		<td><input type="radio" name="value" class="radio" value="3"></td>
-																		<td><input type="radio" name="value" class="radio" value="4"></td>
-																		<td><input type="radio" name="value" class="radio" value="5"></td>
-																	</tr>
-																</tbody>
-															</table><!-- /.table .table-bordered -->
-														</div><!-- /.table-responsive -->
-													</div><!-- /.review-table -->
-
-													<div class="review-form">
-														<div class="form-container">
-
-
-															<div class="row">
-																<div class="col-sm-6">
-																	<div class="form-group">
-																		<label for="exampleInputName">Nombre <span class="astk">*</span></label>
-																		<input type="text" class="form-control txt" id="exampleInputName" placeholder="" name="name" required="required">
-																	</div><!-- /.form-group -->
-																	<div class="form-group">
-																		<label for="exampleInputSummary">Resumen <span class="astk">*</span></label>
-																		<input type="text" class="form-control txt" id="exampleInputSummary" placeholder="" name="summary" required="required">
-																	</div><!-- /.form-group -->
-																</div>
-
-																<div class="col-md-6">
-																	<div class="form-group">
-																		<label for="exampleInputReview">Opinión <span class="astk">*</span></label>
-
-																		<textarea class="form-control txt txt-review" id="exampleInputReview" rows="4" placeholder="" name="review" required="required"></textarea>
-																	</div><!-- /.form-group -->
-																</div>
-															</div><!-- /.row -->
-
-															<div class="action text-right">
-																<button name="submit" class="btn btn-primary btn-upper">ENVIAR CALIFICACIÓN</button>
-															</div><!-- /.action -->
-
-											</form><!-- /.cnt-form -->
-										</div><!-- /.form-container -->
-									</div><!-- /.review-form -->
 								</div><!-- /.product-add-review -->
 							</div><!-- /.product-tab -->
 						</div><!-- /.tab-pane -->
@@ -504,54 +259,6 @@ if (isset($_POST['submit'])) {
 <?php $cid = $row['category'];
 				$subcid = $row['subCategory'];
 			} ?>
-<!-- ============================================== UPSELL PRODUCTS ============================================== -->
-<section class="section featured-product wow fadeInUp">
-	<h3 class="section-title">Productos similares </h3>
-	<div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
-		<?php
-		$qry = mysqli_query($con, "select * from products where subCategory='$subcid' and category='$cid'");
-		while ($rw = mysqli_fetch_array($qry)) {
-		?>
-			<div class="item item-carousel">
-				<div class="products">
-					<div class="product">
-						<div class="product-image">
-							<div class="image">
-								<a href="product-details.php?pid=<?php echo htmlentities($rw['id']); ?>"><img src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($rw['id']); ?>/<?php echo htmlentities($rw['productImage1']); ?>" width="150" height="240" alt=""></a>
-							</div><!-- /.image -->
-						</div><!-- /.product-image -->
-						<div class="product-info text-left">
-							<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($rw['id']); ?>"><?php echo htmlentities($rw['productName']); ?></a></h3>
-							<div class="rating rateit-small"></div>
-							<div class="description"></div>
-							<div class="product-price">
-								<span class="price">
-									$.<?php echo htmlentities($rw['productPrice']); ?> </span>
-								<span class="price-before-discount">$.
-									<?php echo htmlentities($rw['productPriceBeforeDiscount']); ?></span>
-							</div><!-- /.product-price -->
-						</div><!-- /.product-info -->
-						<div class="cart clearfix animate-effect">
-							<div class="action">
-								<ul class="list-unstyled">
-									<li class="add-cart-button btn-group">
-										<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-											<i class="fa fa-shopping-cart"></i>
-										</button>
-										<a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>" class="lnk btn btn-primary">Agregar a carrito</a>
-									</li>
-								</ul>
-							</div><!-- /.action -->
-						</div><!-- /.cart -->
-					</div><!-- /.product -->
-
-				</div><!-- /.products -->
-			</div><!-- /.item -->
-		<?php } ?>
-
-
-	</div><!-- /.home-owl-carousel -->
-</section>
 </div>
 <div class="clearfix"></div>
 

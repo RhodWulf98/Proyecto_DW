@@ -3,12 +3,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <!-- ============================================================= CONTACT INFO ============================================================= -->
+                    <!-- ============================================================= Información de contacto : Inicio ============================================================= -->
                     <div class="contact-info">
                         <div class="footer-logo">
                             <div class="logo">
                                 <a href="index.php">
-
                                     <h3>Mundo Digial</h3>
                                 </a>
                             </div><!-- /.logo -->
@@ -29,11 +28,11 @@
                         </div><!-- /.module-body -->
 
                     </div><!-- /.contact-info -->
-                    <!-- ============================================================= CONTACT INFO : END ============================================================= -->
+                    <!-- ============================================================= Información de contacto : FIN ============================================================= -->
                 </div><!-- /.col -->
 
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <!-- ============================================================= CONTACT TIMING============================================================= -->
+                    <!-- ============================================================= Horario============================================================= -->
                     <div class="contact-timing">
                         <div class="module-heading">
                             <h4 class="module-title">Horario de atención</h4>
@@ -47,20 +46,12 @@
                                             <td>Lunes-Viernes:</td>
                                             <td class="pull-right">08:00 a 18:00 hrs</td>
                                         </tr>
-                                        <tr>
-                                            <td>Sábados:</td>
-                                            <td class="pull-right">09:00 a 20:00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Domingos:</td>
-                                            <td class="pull-right">10:00 a 20:00</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div><!-- /.table-responsive -->
                         </div><!-- /.module-body -->
                     </div><!-- /.contact-timing -->
-                    <!-- ============================================================= CONTACT TIMING : END ============================================================= -->
+                    <!-- ============================================================= Horario : END ============================================================= -->
                 </div><!-- /.col -->
 
                 <div class="col-xs-12 col-sm-6 col-md-4">
@@ -116,46 +107,25 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div><!-- /.links-social -->
+</footer>
 
-    <script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/js/jquery-1.11.1.min.js"></script>
 
-    <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 
-    <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 
-    <script src="assets/js/echo.min.js"></script>
-    <script src="assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="assets/js/bootstrap-slider.min.js"></script>
-    <script src="assets/js/jquery.rateit.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightbox.min.js"></script>
-    <script src="assets/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
-
-    <!-- For demo purposes – can be removed on production -->
-
-    <script src="switchstylesheet/switchstylesheet.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $(".changecolor").switchstylesheet({
-                seperator: "color"
-            });
-            $('.show-theme-options').click(function() {
-                $(this).parent().toggleClass('open');
-                return false;
-            });
-        });
-
-        $(window).bind("load", function() {
-            $('.show-theme-options').delay(2000).trigger('click');
-        });
-    </script>
-    <!-- For demo purposes – can be removed on production : End -->
+<script src="assets/js/echo.min.js"></script>
+<script src="assets/js/jquery.easing-1.3.min.js"></script>
+<script src="assets/js/bootstrap-slider.min.js"></script>
+<script src="assets/js/jquery.rateit.min.js"></script>
+<script type="text/javascript" src="assets/js/lightbox.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/scripts.js"></script>
 
 
+</body>
 
-    </body>
-
-    </html>
+</html>

@@ -41,7 +41,7 @@
   vertical-align: top;
 }
 ul {
-  list-style: none;
+  /* list-style: none; */
 }
 a {
   -webkit-transition: all 0.2s linear 0s;

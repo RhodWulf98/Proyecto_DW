@@ -42,12 +42,12 @@
 	/* 
 	 * MySQL connection
 	 */
-	if ( ! $gaSql['link'] = mysql_pconnect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) )
+	if ( ! $gaSql['link'] = mysqli_connect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) )
 	{
 		fatal_error( 'Could not open connection to server' );
 	}
 
-	if ( ! mysql_select_db( $gaSql['db'], $gaSql['link'] ) )
+	if ( ! mysqli_select_db( $gaSql['db'], $gaSql['link'] ) )
 	{
 		fatal_error( 'Could not select database ' );
 	}
@@ -102,7 +102,7 @@
 		{
 			if ( isset($_GET['bSearchable_'.$i]) && $_GET['bSearchable_'.$i] == "true" )
 			{
-				$sWhere .= $aColumns[$i]." LIKE '%".mysql_real_escape_string( $_GET['sSearch'] )."%' OR ";
+				$sWhere .= $aColumns[$i]." LIKE '%".mysqli_real_escape_string( $_GET['sSearch'] , '')."%' OR ";
 			}
 		}
 		$sWhere = substr_replace( $sWhere, "", -3 );
@@ -122,7 +122,7 @@
 			{
 				$sWhere .= " AND ";
 			}
-			$sWhere .= $aColumns[$i]." LIKE '%".mysql_real_escape_string($_GET['sSearch_'.$i])."%' ";
+			$sWhere .= $aColumns[$i]." LIKE '%".mysqli_real_escape_string($_GET['sSearch_'.$i], '')."%' ";
 		}
 	}
 	

@@ -2,46 +2,44 @@
 session_start();
 error_reporting(0);
 include("include/config.php");
-if(isset($_POST['submit']))
-{
-	$username=$_POST['username'];
-	$password=md5($_POST['password']);
-$ret=mysqli_query($con,"SELECT * FROM admin WHERE username='$username' and password='$password'");
-$num=mysqli_fetch_array($ret);
-if($num>0)
-{
-$extra="change-password.php";//
-$_SESSION['alogin']=$_POST['username'];
-$_SESSION['id']=$num['id'];
-$host=$_SERVER['HTTP_HOST'];
-$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-header("location:http://$host$uri/$extra");
-exit();
-}
-else
-{
-$_SESSION['errmsg']="Invalid username or password";
-$extra="index.php";
-$host  = $_SERVER['HTTP_HOST'];
-$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-header("location:http://$host$uri/$extra");
-exit();
-}
+if (isset($_POST['submit'])) {
+	$username = $_POST['username'];
+	$password = md5($_POST['password']);
+	$ret = mysqli_query($con, "SELECT * FROM admin WHERE username='$username' and password='$password'");
+	$num = mysqli_fetch_array($ret);
+	if ($num > 0) {
+		$extra = "change-password.php"; //
+		$_SESSION['alogin'] = $_POST['username'];
+		$_SESSION['id'] = $num['id'];
+		$host = $_SERVER['HTTP_HOST'];
+		$uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+		header("location:http://$host$uri/$extra");
+		exit();
+	} else {
+		$_SESSION['errmsg'] = "Invalid username or password";
+		$extra = "index.php";
+		$host  = $_SERVER['HTTP_HOST'];
+		$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+		header("location:http://$host$uri/$extra");
+		exit();
+	}
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tienda Virtual Platea21 | Admin login</title>
+	<title>Mundo Digital - Administración</title>
 	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
 	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
 	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 </head>
+
 <body>
 
 	<div class="navbar navbar-fixed-top">
@@ -50,23 +48,14 @@ exit();
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
 					<i class="icon-reorder shaded"></i>
 				</a>
-
-			  	<a class="brand" href="index.html">
-			  		Tienda Virtual Platea21 | Admin
-			  	</a>
-
+				<a class="brand" href="index.php">
+					Mundo Digital - Administración
+				</a>
 				<div class="nav-collapse collapse navbar-inverse-collapse">
-				
 					<ul class="nav pull-right">
-
 						<li><a href="../">
-						Volver al Portal
-						
-						</a></li>
-
-						
-
-						
+								Volver a la tienda
+							</a></li>
 					</ul>
 				</div><!-- /.nav-collapse -->
 			</div>
@@ -83,7 +72,7 @@ exit();
 						<div class="module-head">
 							<h3>Iniciar Sesión</h3>
 						</div>
-						<span style="color:red;" ><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
+						<span style="color:red;"><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg'] = ""); ?></span>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
@@ -92,7 +81,7 @@ exit();
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-						<input class="span12" type="password" id="inputPassword" name="password" placeholder="Contraseña">
+									<input class="span12" type="password" id="inputPassword" name="password" placeholder="Contraseña">
 								</div>
 							</div>
 						</div>
@@ -100,7 +89,6 @@ exit();
 							<div class="control-group">
 								<div class="controls clearfix">
 									<button type="submit" class="btn btn-primary pull-right" name="submit">Ingresar</button>
-									
 								</div>
 							</div>
 						</div>
@@ -108,13 +96,10 @@ exit();
 				</div>
 			</div>
 		</div>
-	</div><!--/.wrapper-->
-
+	</div>
 	<div class="footer">
 		<div class="container">
-			 
-
-			<b class="copyright">&copy; 2020 Tienda Virtual - <a href="https://platea21.blogspot.com/"> https://platea21.blogspot.com</a> </b> Todos los derechos reservados.
+			<b class="copyright">&copy; Mundo Digital - </b> Todos los derechos reservados.
 		</div>
 	</div>
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>

@@ -84,7 +84,6 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 					<!-- ================================== TOP NAVIGATION ================================== -->
 					<!-- ================================== TOP NAVIGATION : END ================================== -->
 					<div class="sidebar-module-container">
-						<h3 class="section-title">comprar por</h3>
 						<div class="sidebar-filter">
 							<!-- ============================================== SIDEBAR CATEGORY ============================================== -->
 							<div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
@@ -121,19 +120,12 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 
 					<div id="category" class="category-carousel hidden-xs">
 						<div class="item">
-							<div class="image">
-								<img src="assets/images/banners/cat-banner-2.jpg" alt="" class="img-responsive">
-							</div>
 							<div class="container-fluid">
 								<div class="caption vertical-top text-left">
-									<div class="big-text">
-										<br />
-									</div>
 
 									<?php $sql = mysqli_query($con, "select subcategory  from subcategory where id='$cid'");
 									while ($row = mysqli_fetch_array($sql)) {
 									?>
-
 										<div class="excerpt hidden-sm hidden-md">
 											<?php echo htmlentities($row['subcategory']); ?>
 										</div>
@@ -158,46 +150,22 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 														<div class="product">
 															<div class="product-image">
 																<div class="image">
-																	<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" alt="" width="200" height="300"></a>
+																	<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" alt="" width="300" height="300"></a>
 																</div><!-- /.image -->
 															</div><!-- /.product-image -->
 
 
 															<div class="product-info text-left">
 																<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><?php echo htmlentities($row['productName']); ?></a></h3>
-																<div class="rating rateit-small"></div>
 																<div class="description"></div>
-
 																<div class="product-price">
 																	<span class="price">
-																		$. <?php echo htmlentities($row['productPrice']); ?> </span>
-																	<span class="price-before-discount">$. <?php echo htmlentities($row['productPriceBeforeDiscount']); ?></span>
+																		$ <?php echo htmlentities($row['productPrice']); ?> </span>
+																	<span class="price-before-discount">$ <?php echo htmlentities($row['productPriceBeforeDiscount']); ?></span>
 
 																</div><!-- /.product-price -->
 
 															</div><!-- /.product-info -->
-															<div class="cart clearfix animate-effect">
-																<div class="action">
-																	<ul class="list-unstyled">
-																		<li class="add-cart-button btn-group">
-																			<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-																				<i class="fa fa-shopping-cart"></i>
-																			</button>
-																			<a href="category.php?page=product&action=add&id=<?php echo $row['id']; ?>">
-																				<button class="btn btn-primary" type="button">Agregar a carrito</button></a>
-
-																		</li>
-
-																		<li class="lnk wishlist">
-																			<a class="add-to-cart" href="category.php?pid=<?php echo htmlentities($row['id']) ?>&&action=wishlist" title="Wishlist">
-																				<i class="icon fa fa-heart"></i>
-																			</a>
-																		</li>
-
-
-																	</ul>
-																</div><!-- /.action -->
-															</div><!-- /.cart -->
 														</div>
 													</div>
 												</div>
@@ -207,63 +175,14 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 												<h3>No se encontraron productos</h3>
 											</div>
 										<?php } ?>
-
 									</div><!-- /.row -->
 								</div><!-- /.category-product -->
-
 							</div><!-- /.tab-pane -->
-
-
-
 						</div><!-- /.search-result-container -->
-
 					</div><!-- /.col -->
 				</div>
 			</div>
 			<?php include('includes/brands-slider.php'); ?>
-
 		</div>
 	</div>
 	<?php include('includes/footer.php'); ?>
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
-
-	<script src="assets/js/bootstrap.min.js"></script>
-
-	<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
-	<script src="assets/js/owl.carousel.min.js"></script>
-
-	<script src="assets/js/echo.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
-	<script src="assets/js/bootstrap-slider.min.js"></script>
-	<script src="assets/js/jquery.rateit.min.js"></script>
-	<script type="text/javascript" src="assets/js/lightbox.min.js"></script>
-	<script src="assets/js/bootstrap-select.min.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/scripts.js"></script>
-
-	<!-- For demo purposes – can be removed on production -->
-
-	<script src="switchstylesheet/switchstylesheet.js"></script>
-
-	<script>
-		$(document).ready(function() {
-			$(".changecolor").switchstylesheet({
-				seperator: "color"
-			});
-			$('.show-theme-options').click(function() {
-				$(this).parent().toggleClass('open');
-				return false;
-			});
-		});
-
-		$(window).bind("load", function() {
-			$('.show-theme-options').delay(2000).trigger('click');
-		});
-	</script>
-	<!-- For demo purposes – can be removed on production : End -->
-
-
-
-</body>
-
-</html>

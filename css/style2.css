@@ -70,6 +70,10 @@ body {
 }
 /* #endregion */
 
+.enlaces_generico{
+    background-color:black;
+}
+
 /* #region mostrador */
 
 #carouselExampleIndicators {

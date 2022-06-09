@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 		header("location:http://$host$uri/$extra");
 		exit();
 	} else {
-		$_SESSION['errmsg'] = "Invalid username or password";
+		$_SESSION['errmsg'] = "Usuario o contraseña incorrectos";
 		$extra = "index.php";
 		$host  = $_SERVER['HTTP_HOST'];
 		$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
 	</div>
 	<div class="footer">
 		<div class="container">
-			<b class="copyright">&copy; Mundo Digital - </b> Todos los derechos reservados.
+			<b class="copyright">&copy; Mundo Digital </b> Todos los derechos reservados.
 		</div>
 	</div>
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
